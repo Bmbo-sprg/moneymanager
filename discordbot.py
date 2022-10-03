@@ -95,4 +95,4 @@ async def loop():
     return
 
 token = getenv('DISCORD_BOT_TOKEN')
-client.run(TOKEN)
+client.run(token)
