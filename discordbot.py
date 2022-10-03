@@ -3,11 +3,11 @@ import re
 import traceback
 import discord
 from discord.ext import tasks
+from os import getenv
 
 MONEY_CH_ID = 1005320470603767848
 TAKE_ID = 823804645910118400
 HARU_ID = 837326439707312163
-TOKEN = 'MTAyNTk3OTg3MzQ2ODA4ODQwMQ.GXaE1O.M9nGtpb_stB20sCKPXFB8dgpUUbcizLc0uOAAM'
 COREMO_KEYWORD = ['coremo', 'コレモ', 'これも', 'COREMO', 'Coremo']
 SEISENKAN_KEYWORD = ['seisenkan', '生鮮館なかむら', '生鮮館', 'なかむら', 'せいせんかん', 'せいせん']
 GRACE_KEYWORD = ['grace', 'グレースたなか', 'グレース', 'ぐれーす', 'たなか', 'GRACE',
@@ -94,5 +94,5 @@ async def loop():
         .send(f'今の差額（竹馬 - はる）：{money_delta / 2} 円')
     return
 
-
+token = getenv('DISCORD_BOT_TOKEN')
 client.run(TOKEN)
